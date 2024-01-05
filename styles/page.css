@@ -1,0 +1,42 @@
+p {
+  line-height: 1.5;
+}
+
+.p-text {
+  font-size: 1.6rem;
+}
+
+.submit_button {
+  width: 40%;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  text-align: center;
+
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  color: #ffffff;
+}
+
+.email_input {
+  width: 60%;
+  box-sizing: border-box;
+  /* text-indent: 30px; */
+  padding-left: 1vw;
+  /* border: 2px solid #4caf50; */
+  border-radius: 0.5rem 0rem 0rem 0.5rem; /* top-left, top-right, bottom-left, bottom-right*/
+  font-size: 1.6rem;
+  color: #6d6d6d;
+}
+
+.email_input::placeholder {
+  font-size: 1.4rem;
+  color: #6d6d6d;
+}
+
+.email_input:focus {
+  order: 2px solid #45a049;
+  outline: none;
+}

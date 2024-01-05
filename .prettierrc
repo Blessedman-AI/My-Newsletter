@@ -1,0 +1,17 @@
+{
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "printWidth": 65,
+  "proseWrap": "always",
+  "htmlWhitespaceSensitivity": "css",
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": ["*.json"],
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
+}
