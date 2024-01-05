@@ -7,7 +7,10 @@ import '../styles/globals.css';
 
 export default function Home() {
   return (
-    <main className="main bg-[#03040b] flex flex-col items-center justify-center p-2 min-h-screen">
+    <main
+      className="main bg-[#03040b] flex flex-col items-center 
+    mb-8 justify-center p-2 min-h-screen"
+    >
       <div className="space-y-1">
         <MainContent />
         <NewsletterForm />

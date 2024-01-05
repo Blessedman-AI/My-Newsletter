@@ -55,7 +55,15 @@ const NewsletterForm = () => {
     }
 
     if (data?.email_address) {
-      setSuccessMessage('You have subscribed successfully!');
+      setSuccessMessage(
+        <div>
+          <span className="font-bold">
+            {data.email_address}{' '}
+          </span>{' '}
+          has been successfully subscribed! You will receive a
+          welcome email shortly.
+        </div>
+      );
       setInvalidResource(undefined);
       setErrorMessage(undefined);
       console.log(data.email_address);
@@ -84,12 +92,12 @@ const NewsletterForm = () => {
 
   return (
     <div
-      className="form_container grid place-items-center  
-    px-5 xl:px-15 lg:pt-2 lg:px-14 md:place-items-center 
+      className="form_container  grid place-items-center
+    grid-cols-1
     "
     >
       <form
-        className="newsletter_form animate-fade-in-3"
+        className="newsletter_form max-w-14 md:max-w-14 lg:max-w-16 w-full animate-fade-in-3"
         onSubmit={handleSubmit}
       >
         {/* <EnvelopeIcon
@@ -129,36 +137,61 @@ const NewsletterForm = () => {
         </button>
       </form>
 
-      <div className="relative">
+      <div className="relative max-w-14 md:max-w-14 lg:max-w-16 w-full mt-2">
         {(successMessage || errorMessage || invalidResource) && (
-          <div>
-            <div
-              className="h-6 w-6 bg-[#1B2926] 
+          <div
+            className="flex justify-center space-x-2 bg-[#0A0E12] 
+          shadow-outline-grey text-white rounded-[9px] py-3 px-2 animate-fade-bottom absolute"
+          >
+            <div className="text-lg sm:text-lg text-center text-[#c5c5c5]">
+              {successMessage ? (
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div
+                      className="h-4 w-4 bg-[#1B2926] 
             flex items-center justify-center 
             rounded-full border border-[#273130] 
             flex-shrink-0"
-            >
-              <CheckIcon className="h-4 w-4 text-[#81A89A]" />
-            </div>
-
-            <div className="text-xs sm:text-sm text-[#8b8b8b]">
-              {successMessage ? (
-                <p>You have been subscribed successfully</p>
+                    >
+                      <CheckIcon className="h-4 w-4 text-[#81A89A]" />
+                    </div>
+                    <p>
+                      <span>{successMessage}</span>
+                    </p>
+                    <XMarkIcon
+                      className="h-5 w-5 cursor-pointer text-[#ab2b2b]"
+                      onClick={dismissMessages}
+                    />
+                  </div>
+                </div>
               ) : invalidResource ? (
-                <p>
-                  Your email looks fake or is invalid. Please try
-                  a different email.
-                </p>
+                <div className="flex  items-center justify-between">
+                  <div className="flex  items-center">
+                    <p>
+                      {/* Your email looks fake or is invalid. Please
+                      try another email */}
+
+                      {invalidResource}
+                    </p>
+
+                    <XMarkIcon
+                      className="h-4 w-4 cursor-pointer text-[#ab2b2b]"
+                      onClick={dismissMessages}
+                    />
+                  </div>
+                </div>
               ) : (
-                <p>You are already subscribed</p>
+                <div className=" flex items-center justify-between space-x-4">
+                  <p>{errorMessage}</p>
+                  <div>
+                    <XMarkIcon
+                      className=" h-4 w-4 pr--8 cursor-pointer text-[#ab2b2b]"
+                      onClick={dismissMessages}
+                    />
+                  </div>
+                </div>
               )}
             </div>
-
-            <XMarkIcon
-              className="h-5 w-5 cursor-pointer 
-              flex-shrink-0 text-[#4A4B55]"
-              onClick={dismissMessages}
-            />
           </div>
         )}
       </div>
