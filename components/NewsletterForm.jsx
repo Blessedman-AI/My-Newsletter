@@ -12,8 +12,8 @@ const NewsletterForm = () => {
   const [input, setInput] = useState('');
   const [active, setActive] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
-  const [invalidResource, setInvalidResource] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [invalidResource, setInvalidResource] = useState('');
   // console.log(input);
 
   const buttonRef = useRef(null);

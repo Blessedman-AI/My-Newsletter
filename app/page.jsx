@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import MainContent from '@components/MainContent';
 import NewsletterForm from '@components/NewsletterForm';
 import '../styles/page.css';
