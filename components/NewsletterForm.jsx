@@ -169,7 +169,7 @@ const NewsletterForm = () => {
                   <div className="flex  items-center">
                     <p>
                       {/* Your email looks fake or is invalid. Please
-                      try another email */}
+                      try another em ail */}
 
                       {invalidResource}
                     </p>
@@ -194,7 +194,7 @@ const NewsletterForm = () => {
             </div>
           </div>
         )}
-      </div>
+      </div> 
     </div>
   );
 };

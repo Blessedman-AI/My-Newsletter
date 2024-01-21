@@ -2,6 +2,9 @@
 
 import MainContent from '@components/MainContent';
 import NewsletterForm from '@components/NewsletterForm';
+
+import { SocialMedia } from '@components/SocialLinks';
+
 import '../styles/page.css';
 import '../styles/globals.css';
 
@@ -14,6 +17,7 @@ export default function Home() {
       <div className="space-y-1">
         <MainContent />
         <NewsletterForm />
+        <SocialMedia />
       </div>
     </main>
   );

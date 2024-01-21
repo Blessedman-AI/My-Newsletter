@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+// import Image from 'next/image';
 import '../styles/page.css';
 import '../styles/globals.css';
 
@@ -11,13 +11,13 @@ const MainContent = () => {
         className="grid place-items-center  px-5 xl:px-15 
       lg:pt-2 lg:px-14 md:place-items-center space-y-4"
       >
-        <Image
+        {/* <Image
           className="rounded-full"
           src="/assets/images/pic.png"
           width={80}
           height={80}
           alt="My image"
-        />
+        /> */}
 
         <div className="space-y-1">
           <h2
