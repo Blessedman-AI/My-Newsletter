@@ -42,7 +42,6 @@ const NewsletterForm = () => {
     });
 
     const data = await res.json();
-    console.log(data);
 
     if (
       data &&
@@ -97,7 +96,7 @@ const NewsletterForm = () => {
 
   return (
     <div
-      className="form_container  grid place-items-center
+      className=" form_container  grid place-items-center
     grid-cols-1
     "
     >
@@ -125,7 +124,7 @@ const NewsletterForm = () => {
           ref={buttonRef}
           disabled={!inputValue}
           type="submit"
-          className={`submit_button  py-1 border
+          className={`submit_button py-1 border
           bg-gradient-to-r from-orange-400 to-orange-800
            border-orange-800  disabled:py-1 disabled:border
             disabled:border-orange-800
@@ -141,7 +140,7 @@ const NewsletterForm = () => {
           </div> */}
         </button>
       </form>
-      <div className="relative max-w-14 md:max-w-14 lg:max-w-16 w-full mt-2">
+      <div className="z-20 relative max-w-14 md:max-w-14 lg:max-w-16 w-full mt-2">
         {(successMessage || errorMessage || invalidResource) && (
           <div
             className="flex justify-center space-x-2 bg-[#0A0E12] 

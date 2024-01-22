@@ -24,7 +24,7 @@ const MainContent = () => {
           <h2
             // style={{ lineHeight: '5rem' }}
             className="break-words whitespace-normal overflow-hidden 
-            z-10 text-6xl font-bold text-center text-transparent 
+            z-10 text-5xl font-bold text-center text-transparent 
             duration-1000 bg-white cursor-default text-stroke 
             animate-title md:text-6xl bg-clip-text"
           >
