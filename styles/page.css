@@ -10,7 +10,7 @@ p {
   width: 40%;
   display: inline-block;
   box-sizing: border-box;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-align: center;
 
   border-radius: 0rem 0.5rem 0.5rem 0rem;
@@ -20,6 +20,13 @@ p {
   color: #ffffff;
 }
 
+.form_container {
+  margin-top: 4rem !important;
+}
+.social_container {
+  margin-top: 6rem !important;
+}
+
 .email_input {
   width: 60%;
   box-sizing: border-box;
@@ -27,7 +34,7 @@ p {
   padding-left: 1vw;
   /* border: 2px solid #4caf50; */
   border-radius: 0.5rem 0rem 0rem 0.5rem; /* top-left, top-right, bottom-left, bottom-right*/
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #6d6d6d;
 }
 
@@ -37,6 +44,6 @@ p {
 }
 
 .email_input:focus {
-  order: 2px solid #45a049;
+  /* border: 2px solid #45a049; */
   outline: none;
 }

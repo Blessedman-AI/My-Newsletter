@@ -9,7 +9,8 @@ import { CheckIcon, XMarkIcon } from '@heroicons/react/24/solid';
 // import { useStyleRegistry } from 'styled-jsx';
 
 const NewsletterForm = () => {
-  const [input, setInput] = useState('');
+  const [inputValue, setInputValue] = useState('');
+
   const [active, setActive] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -18,10 +19,14 @@ const NewsletterForm = () => {
 
   const buttonRef = useRef(null);
 
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const email = input;
+    const email = inputValue;
     const button = buttonRef.current;
 
     if (!email || !button) return;
@@ -97,7 +102,8 @@ const NewsletterForm = () => {
     "
     >
       <form
-        className="newsletter_form max-w-14 md:max-w-14 lg:max-w-16 w-full animate-fade-in-3"
+        className="newsletter_form max-w-14 md:max-w-14 lg:max-w-14 
+        w-full animate-fade-in-3"
         onSubmit={handleSubmit}
       >
         {/* <EnvelopeIcon
@@ -106,9 +112,9 @@ const NewsletterForm = () => {
          group-hover:text-white transition-colors duration-300"
         /> */}
         <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          className="email_input py-1 border-2 border-orange-800"
+          value={inputValue}
+          onChange={handleChange}
+          className="email_input py-1 "
           type="email"
           required
           name="email"
@@ -117,12 +123,11 @@ const NewsletterForm = () => {
 
         <button
           ref={buttonRef}
-          disabled={!input}
+          disabled={!inputValue}
           type="submit"
-          className={`submit_button border-2 py-1 
+          className={`submit_button  py-1 border
           bg-gradient-to-r from-orange-400 to-orange-800
-           border-orange-800 disabled:border-2 disabled:py-1
-        
+           border-orange-800  disabled:py-1 disabled:border
             disabled:border-orange-800
             
             disabled:grayscale-[95%] disabled:opacity-50 
@@ -130,13 +135,12 @@ const NewsletterForm = () => {
         >
           <span className="default"> Subscribe</span>
 
-          <div className="plane">
+          {/* <div className="plane">
             <div className="left"></div>
             <div className="right"></div>
-          </div>
+          </div> */}
         </button>
       </form>
-
       <div className="relative max-w-14 md:max-w-14 lg:max-w-16 w-full mt-2">
         {(successMessage || errorMessage || invalidResource) && (
           <div
@@ -194,7 +198,7 @@ const NewsletterForm = () => {
             </div>
           </div>
         )}
-      </div> 
+      </div>
     </div>
   );
 };

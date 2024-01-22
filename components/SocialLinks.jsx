@@ -19,14 +19,15 @@ function TwitterIcon() {
 
 export function SocialMedia() {
   return (
-    <div className="flex items-center justify-center">
+    <div className="social_container flex items-center justify-center">
       <a
         href={social.url}
         target="_blank"
         rel="noopener noreferrer"
       >
         <div
-          className="flex items-center justify-center gap-x-1 flex-shrink-0"
+          className="flex items-center justify-center gap-x-1 
+          flex-shrink-0 animate-fade-in-3"
           key={social.id}
         >
           <TwitterIcon />
