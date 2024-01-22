@@ -15,9 +15,9 @@ const NewsletterForm = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [invalidResource, setInvalidResource] = useState('');
-  // console.log(input);
 
   const buttonRef = useRef(null);
+  const formRef = useRef(null);
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -53,8 +53,7 @@ const NewsletterForm = () => {
       );
       setSuccessMessage(undefined);
       setErrorMessage(undefined);
-      // console.log(data.error.title);
-      // console.log(invalidResource);
+
       return;
     }
 
@@ -68,9 +67,10 @@ const NewsletterForm = () => {
           welcome email shortly.
         </div>
       );
+      setInputValue('');
       setInvalidResource(undefined);
       setErrorMessage(undefined);
-      console.log(data.email_address);
+
       return;
     }
 
@@ -85,11 +85,9 @@ const NewsletterForm = () => {
     setSuccessMessage(data?.res);
   };
 
-  // console.log(errorMessage);
-
   const dismissMessages = () => {
     setSuccessMessage(undefined);
-    // setSuccessMessage('');
+
     setErrorMessage('');
     setInvalidResource('');
   };

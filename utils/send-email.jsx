@@ -1,7 +1,6 @@
 import FormData from '@components/NewsletterForm';
 
 const sendEmail = async (data) => {
-  console.log('Email content:', data);
   const apiEndpoint = '/api/email';
 
   try {
