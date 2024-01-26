@@ -10,6 +10,8 @@ import { CheckIcon, XMarkIcon } from '@heroicons/react/24/solid';
 
 const NewsletterForm = () => {
   const [inputValue, setInputValue] = useState('');
+  const [submitButtonText, setSubmitButtonTextOnSubmit] =
+    useState(false);
 
   const [active, setActive] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
@@ -29,6 +31,8 @@ const NewsletterForm = () => {
     const email = inputValue;
     const button = buttonRef.current;
 
+    setSubmitButtonTextOnSubmit(true);
+
     if (!email || !button) return;
 
     if (!active) {
@@ -40,6 +44,7 @@ const NewsletterForm = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
     });
+    setSubmitButtonTextOnSubmit(false);
 
     const data = await res.json();
 
@@ -130,7 +135,10 @@ const NewsletterForm = () => {
             disabled:grayscale-[95%] disabled:opacity-50 
             disabled:cursor-not-allowed`}
         >
-          <span className="default"> Subscribe</span>
+          <span className="default">
+            {' '}
+            {submitButtonText ? 'Subcribing...' : 'Subscribe'}
+          </span>
 
           {/* <div className="plane">
             <div className="left"></div>
